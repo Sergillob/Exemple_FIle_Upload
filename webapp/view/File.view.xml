@@ -1,0 +1,20 @@
+<mvc:View controllerName="uploadExemple_File_Upload.controller.File" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<UploadCollection maximumFilenameLength="55" maximumFileSize="1000" fileDeleted="onFileDeleted"
+						filenameLengthExceed="onFilenameLengthExceed" fileRenamed="onFileRenamed" fileSizeExceed="onFileSizeExceed" id="UploadCollection"
+						change="onChange" mode="SingleSelectMaster" beforeUploadStarts="onBeforeUploadStarts" items="{path: '/FileSet'}" multiple="true"
+						uploadUrl="/sap/opu/odata/sap/ZSERGI_ATTACHMENTS_SRV/FileSet" uploadComplete="onUploadComplete" noDataText="No files found.">
+						<items>
+							<UploadCollectionItem documentId="{ID}" fileName="{FileName}" url="/sap/opu/odata/sap/ZSERGI_ATTACHMENTS_SRV/FileSet(guid'{ID}')/$value"
+								mimeType="{MIMEType}" enableEdit="false" enableDelete="false" visibleDelete="false" visibleEdit="false"></UploadCollectionItem>
+						</items>
+					</UploadCollection>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
